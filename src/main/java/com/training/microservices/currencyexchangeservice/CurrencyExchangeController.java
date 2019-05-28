@@ -30,7 +30,7 @@ public class CurrencyExchangeController {
 		return repo.findAll();
 	}
 	
-	@PostMapping("/currency-exchange/addExchange")
+	@PostMapping("/currency-exchange/addExchangeValue")
 	public void postExchangeValue(@RequestBody ExchangeValue exchangeValue) throws Exception {
 		
 		if (!repo.findById(exchangeValue.getId()).isEmpty()
