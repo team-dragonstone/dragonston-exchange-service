@@ -57,4 +57,9 @@ public class ExchangeValue {
 	protected ExchangeValue () {
 		
 	}
+	@Override
+	public String toString() {
+		return "ExchangeValue [id=" + id + ", from=" + from + ", to=" + to + ", conversionRate=" + conversionRate
+				+ ", port=" + port + "]";
+	}
 }
