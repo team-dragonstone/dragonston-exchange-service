@@ -33,7 +33,7 @@ public class CurrencyExchangeController {
 	@PostMapping("/currency-exchange/addExchangeValue")
 	public void postExchangeValue(@RequestBody ExchangeValue exchangeValue) throws Exception {
 		
-		if (!repo.findById(exchangeValue.getId()).isEmpty()
+		if (repo.findById(exchangeValue.getId()).isPresent()
 				|| repo.findByFromAndTo(exchangeValue.getFrom(), exchangeValue.getTo()) != null) {
 			//TODO: CIC guys might have an error page or something we can direct this message to.
 			throw new Exception("An exchangeValue with id: " + exchangeValue.getId() 
